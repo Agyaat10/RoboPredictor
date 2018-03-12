@@ -1,0 +1,81 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <img  src="http://www.realdetroitweekly.com/wp-content/uploads/2016/12/Personal-Loan.jpg" height="300px" width="1050px">
+    <h1>Loan Status</h1>
+    <p class="lead">Let's Predict whether loan will be approved or not?.</p>
+</div>
+<!-- Page Content -->
+<h1 class="mt-5">Predict Loan Status?</h1>
+<p>
+    <!--This model predicts the probability of survival on the titanic using a logistic regression model trained on actual data from the Titanic.-->
+</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- The web form goes here -->
+            <form action="/loan" method="post" id="titanic_predict">
+                <div>
+                    <label for="name">Gender:</label>
+                    <input type="text" class="form-control input-lg" id="gender" name="predict_gender" value='Male'>
+                </div>
+                <div>
+                    <label for="name"> Married:</label>
+                    <input type="text" class="form-control input-lg" id="married" name="predict_married" value='Yes'>
+                </div>
+                <div>
+                    <label for="name">Education:</label>
+                    <input type="text" class="form-control input-lg" id="education" name="predict_education" value='Graduate'>
+                </div>
+                <div>
+                    <label for="name">Applicant Income:</label>
+                    <input type="text" class="form-control input-lg" id="income" name="predict_income" value='5720'>
+                </div>
+                <div>
+                    <label for="name">Self Employed:</label>
+                    <input type="text" class="form-control input-lg" id="employed" name="predict_employed" value='No'>
+                </div>
+                <div>
+                    <label for="name">Loan Amount:</label>
+                    <input type="text" class="form-control input-lg" id="amount" name="predict_amount" value='110'>
+                </div>
+                <div>
+                    <label for="name">Loan Amount Term:</label>
+                    <input type="text" class="form-control input-lg" id="term" name="predict_term" value='360'>
+                </div>
+                <div>
+                    <label for="name">Credit History:</label>
+                    <input type="text" class="form-control input-lg" id="credit" name="predict_credit" value='1'>
+                </div>
+                <div>
+                    <label for="name">Property Area:</label>
+                    <input type="text" class="form-control input-lg" id="area" name="predict_area" value='Urban'>
+                </div>
+            </form>
+            <button class="btn btn-primary btn-large" type="submit" form="titanic_predict" value="Submit">Predict</button>
+        </div>
+        <div class="col-lg-4">
+            <!-- Result presentation goes here -->
+            <h1>Loan Status is:</h1>
+            <p color="green" id="result">{{predic}}</p>
+            <h1>Training Accuracy is:</h1>
+            <p color="green" id="result">{{trainacc}}</p>
+            <h1>Testing Accuracy is:</h1>
+            <p color="green" id="result">{{testacc}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <img style="margin-top: 50px;" src="" height="400px">
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+<!-- Bootstrap core JavaScript -->
+<script src="static/scripts/jquery-1.10.2.js"></script>
+
+<script src="static/scripts/bootstrap.min.js"></script>
+{% endblock %}

@@ -1,0 +1,84 @@
+﻿{% extends "layout.html" %}
+
+{% block content %}
+<div class="jumbotron">
+    <img src="https://kaiserhealthnews.files.wordpress.com/2016/04/hospital-stars-770.jpg" height="300px" width="1050px">
+    <h1>Hospital Rating</h1>
+    <p class="lead">Let's Predict hospital rating based on few features.</p>
+    
+</div>
+<!-- Page Content -->
+<h1 class="mt-5">Predict Hospital rating?</h1>
+<p>
+    <!--This model predicts the probability of survival on the titanic using a logistic regression model trained on actual data from the Titanic.-->
+</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- The web form goes here -->
+            <form action="/hospital1" method="post" id="hospital_predict">
+                <div>
+                    <label for="name">Patient experience national comparison:</label>
+                    <input type="text" class="form-control input-lg" id="patient_experience" name="predict_patient_experience" value='Below the national average'>
+                </div>
+                <div>
+                    <label for="name">ZIP Code:</label>
+                    <input type="text" class="form-control input-lg" id="zip_code" name="predict_zip_code" value='36301'>
+                </div>
+                <div>
+                    <label for="name"> Hospital Type:</label>
+                    <input type="text" class="form-control input-lg" id="hospital_type" name="predict_hospital_type" value='Acute Care Hospitals'>
+                </div>
+                <div>
+                    <label for="name">Hospital Ownership</label>
+                    <input type="text" class="form-control input-lg" id="hospital_ownership" name="predict_ownership" value='Government - Hospital District or Authority'>
+                </div>
+                <div>
+                    <label for="name">Emergency Services</label>
+                    <input type="text" class="form-control input-lg" id="services" name="predict_services" value='Yes'>
+                </div>
+                <div>
+                    <label for="name">Meets criteria for meaningful use of EHRs</label>
+                    <input type="text" class="form-control input-lg" id="ehr" name="predict_EHR" value='Y'>
+                </div>
+                <div>
+                    <label for="name">Mortality national comparison</label>
+                    <input type="text" class="form-control input-lg" id="mortality" name="predict_mortality" value='Same as the national average'>
+                </div>
+                <div>
+                    <label for="name">Safety of care national comparison</label>
+                    <input type="text" class="form-control input-lg" id="care" name="predict_care" value='Above the national average'>
+                </div>
+                <div>
+                    <label for="name">Timeliness of care national comparison</label>
+                    <input type="text" class="form-control input-lg" id="timeliness" name="predict_timeliness" value='Above the national average'>
+                </div>
+                <div>
+                    <label for="name">Efficient use of medical imaging national comparison</label>
+                    <input type="text" class="form-control input-lg" id="imaging" name="predict_imaging" value='Above the national average'>
+                </div>
+            </form>
+            <button class="btn btn-primary btn-large" type="submit" form="hospital_predict" value="Submit">Predict</button>
+        </div>
+        <div class="col-lg-4">
+            <!-- Result presentation goes here -->
+            <h1>Hospital rating is:</h1>
+            <p color="green" id="result">{{predic}}</p>
+            <h1>Training Accuracy is:</h1>
+            <p color="green" id="result">{{trainacc}}</p>
+            <h1>Testing Accuracy is:</h1>
+            <p color="green" id="result">{{testacc}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <!--<img style="margin-top: 50px;" src="">-->
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+<!-- Bootstrap core JavaScript -->
+<script src="static/scripts/jquery-1.10.2.js"></script>
+
+<script src="static/scripts/bootstrap.min.js"></script>
+{% endblock %}
