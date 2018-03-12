@@ -34,6 +34,7 @@
   <ItemGroup>
     <Folder Include="FlaskWebProject1\" />
     <Folder Include="C:\Repositories\Recuperateurs\Robo Predictor\FlaskWebProject1\FlaskWebProject1\Data\" />
+    <Folder Include="FlaskWebProject1\Data\" />
     <Folder Include="FlaskWebProject1\static\" />
     <Folder Include="FlaskWebProject1\static\content\" />
     <Folder Include="FlaskWebProject1\static\fonts\" />

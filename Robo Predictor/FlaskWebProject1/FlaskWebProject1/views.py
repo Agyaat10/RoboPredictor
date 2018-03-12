@@ -301,11 +301,12 @@ def hospital1():
         #print("test data is:")
         #print(test_features[0])
         prediction_result = my_tree.predict(input_data.reshape(1, -1))
+        prediction_result_gradient= gradient.predict(input_data.reshape(1, -1))
         #print("prediction is:",prediction_result)
         #prediction = prediction[0][1] # probability of survival
         #data['prediction'] = '{:.1f}% Chance of Survival'.format(prediction * 100)
 
-        return render_template('hospital1.html',predic=prediction_result,trainacc=training_accuracy,testacc=testing_accuracy)
+        return render_template('hospital1.html',predic=prediction_result_gradient,trainacc=training_accuracy,testacc=testing_accuracy)
     return render_template('hospital1.html')
 
 
